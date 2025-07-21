@@ -12,19 +12,23 @@ def scramble(array:list):
     
 
 def split(array:list, destination:list, first_index,last_index): 
-    mid = (int)((first_index + last_index)/2)
-    if(len(array)<= 2):
+    mid = (int)(((first_index + last_index)/2))
+    if(len(array)== 2):
         if(array[0]>array[1]):
             destination.append(array[1])
             destination.append(array[0])
         else:
             destination.append(array[0])
             destination.append(array[1])
+    elif(len(array) == 1):
+        destination.append(array[0])
     else:
         left = array[first_index:mid]
+        print(left)
         right = array[mid:last_index]
-        split(left,first_index,mid)
-        split(right,mid,last_index)
+        print(right)
+        split(left,destination, 0,mid-1)
+        split(right,destination, 0,last_index)
 
     
 
@@ -39,3 +43,5 @@ def binary_search(array, low_index:int, high_index:int, target:int):
         return binary_search(array,middle,high_index,target)
 # print(binary_search(array,0,9,2))
 print(scramble(array))
+split(array, destination, 0, len(array))
+print(destination)
