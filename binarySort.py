@@ -31,9 +31,14 @@ def split(array:list, destination:list, first_index,last_index):
 
 def inserction_sort(array:list):
     length = len(array)
-    for i in range(i,length):
-        current_index = i
-        current_item = array
+    for i in range(1,length): 
+        swap_index = i
+        current_value = array.pop(i)
+        for j in range(i-1, -1, -1):
+            if(current_value < array[j]):
+                swap_index = j
+        array.insert(swap_index, current_value)        
+            
         
             
                 
@@ -50,6 +55,8 @@ def binary_search(array, low_index:int, high_index:int, target:int):
     else:
         return binary_search(array,middle,high_index,target)
 # print(binary_search(array,0,9,2))
-print(scramble(array))
-split(array, destination, 0, len(array))
-print(destination)
+scrambled = [7, 9, 5, 3, 8, 4, 1, 2, 6, 10]
+#split(array, destination, 0, len(array))
+print(scrambled)
+inserction_sort(scrambled)
+print(scrambled)
