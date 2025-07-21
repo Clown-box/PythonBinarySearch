@@ -9,7 +9,6 @@ def scramble(array:list):
         array[secondIndx] = array[i]
         array[i] = secondElement
     return array
-    
 
 def split(array:list, destination:list, first_index,last_index): 
     mid = (int)((first_index + last_index)/2)
@@ -26,7 +25,16 @@ def split(array:list, destination:list, first_index,last_index):
         split(left,first_index,mid)
         split(right,mid,last_index)
 
-    
+def inserction_sort(array:list):
+    length = len(array)
+    for i in range(i,length):
+        current_index = i
+        current_item = array
+        
+            
+                
+
+
 
 def binary_search(array, low_index:int, high_index:int, target:int):
     middle = (int)((array[low_index] + array[high_index])/2)
